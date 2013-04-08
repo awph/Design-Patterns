@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Pas bien" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Pas bien" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Pas bien" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="include/circle.h" />
+		<Unit filename="include/circlev1.h" />
+		<Unit filename="include/circlev2.h" />
+		<Unit filename="include/client.h" />
+		<Unit filename="include/dp1.h" />
+		<Unit filename="include/dp2.h" />
+		<Unit filename="include/hexagon.h" />
+		<Unit filename="include/hexagonv1.h" />
+		<Unit filename="include/hexagonv2.h" />
+		<Unit filename="include/rectangle.h" />
+		<Unit filename="include/rectanglev1.h" />
+		<Unit filename="include/rectanglev2.h" />
+		<Unit filename="include/shape.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/circle.cpp" />
+		<Unit filename="src/circlev1.cpp" />
+		<Unit filename="src/circlev2.cpp" />
+		<Unit filename="src/client.cpp" />
+		<Unit filename="src/dp1.cpp" />
+		<Unit filename="src/dp2.cpp" />
+		<Unit filename="src/hexagon.cpp" />
+		<Unit filename="src/hexagonv1.cpp" />
+		<Unit filename="src/hexagonv2.cpp" />
+		<Unit filename="src/rectangle.cpp" />
+		<Unit filename="src/rectanglev1.cpp" />
+		<Unit filename="src/rectanglev2.cpp" />
+		<Unit filename="src/shape.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

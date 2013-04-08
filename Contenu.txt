@@ -1,0 +1,4 @@
+Expliquer le pattern
+Expliquer l’utilisation dans notre projet
+Comparaison aux exemples du PPT
+Petite astuce, amélioration ?
