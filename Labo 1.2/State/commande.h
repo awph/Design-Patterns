@@ -7,6 +7,8 @@ class Commande
 {
 public:
     Commande();
+    ~Commande();
+
 	void traiterCommande();
 	void setState(Statut* s);
 

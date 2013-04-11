@@ -7,5 +7,6 @@ class Statut
 {
 public:
 	virtual void traiterCommande(Commande* com)=0;
+	virtual ~Statut(){}
 };
 #endif

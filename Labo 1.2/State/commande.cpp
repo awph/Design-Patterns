@@ -1,9 +1,14 @@
 #include "commande.h"
 #include "enattente.h"
 
-Commande::Commande()
+Commande::Commande():statut(new EnAttente())
 {
-    setState(new EnAttente());
+
+}
+
+Commande::~Commande()
+{
+    delete statut;
 }
 
 void Commande::traiterCommande()
@@ -13,5 +18,6 @@ void Commande::traiterCommande()
 
 void Commande::setState(Statut* s)
 {
+    delete statut;
     statut = s;
 }

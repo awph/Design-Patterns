@@ -6,6 +6,6 @@
 
 void Payee::traiterCommande(Commande* com)
 {
-    std::cout << "La commande a bien été traitée !" << std::endl;
+    std::cout << "<<Payée>> : La commande a bien été traitée !" << std::endl;
     com->setState(new Envoyee());
 }
