@@ -1,9 +1,13 @@
-#include <iostream>
+#include "commande.h"
 
-using namespace std;
-
+#include <clocale>
 int main()
 {
-    cout << "Hello world!" << endl;
+    setlocale(LC_ALL, "frs");
+    Commande c;
+    c.traiterCommande();
+    c.traiterCommande();
+    c.traiterCommande();
+
     return 0;
 }
