@@ -32,7 +32,16 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/banane.h" />
+		<Unit filename="include/fraise.h" />
+		<Unit filename="include/fruit.h" />
+		<Unit filename="include/panierdefruit.h" />
+		<Unit filename="include/pomme.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/banane.cpp" />
+		<Unit filename="src/fraise.cpp" />
+		<Unit filename="src/panierdefruit.cpp" />
+		<Unit filename="src/pomme.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
