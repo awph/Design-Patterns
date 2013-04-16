@@ -11,7 +11,6 @@ class Fruit
     protected:
         bool pepin;
         std::string nomDuFruit;
-    private:
 };
 
 #endif // FRUIT_H

@@ -8,8 +8,6 @@ class FruitDecoratorStar : public FruitDecorator
     public:
         FruitDecoratorStar(Fruit *fruit);
         virtual ~FruitDecoratorStar();
-    protected:
-    private:
 };
 
 #endif // FRUITDECORATORSTAR_H

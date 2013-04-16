@@ -9,8 +9,6 @@ class FruitDecoratorEgal : public FruitDecorator
     public:
         FruitDecoratorEgal(Fruit *fruit);
         virtual ~FruitDecoratorEgal();
-    protected:
-    private:
 };
 
 #endif // FRUITDECORATOREGAL_H

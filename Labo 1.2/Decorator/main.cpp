@@ -13,6 +13,7 @@ int main()
     FruitDecoratorEgal *pde = new FruitDecoratorEgal(p);
     FruitDecoratorSharp *pds = new FruitDecoratorSharp(pde);
     FruitDecoratorStar *pdst = new FruitDecoratorStar(pds);
+
     p->afficherFruit();
     cout << endl;
     cout << endl;
@@ -23,5 +24,11 @@ int main()
     cout << endl;
     cout << endl;
     pdst->afficherFruit();
+
+    delete p;
+    delete pde;
+    delete pds;
+    delete pdst;
+
     return 0;
 }
