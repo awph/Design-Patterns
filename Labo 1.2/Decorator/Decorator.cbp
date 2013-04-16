@@ -7,8 +7,8 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin\Debug\Decorator" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj\Debug\" />
+				<Option output="bin/Debug/Decorator" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -16,8 +16,8 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin\Release\Decorator" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj\Release\" />
+				<Option output="bin/Release/Decorator" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -32,22 +32,24 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="include\banane.h" />
-		<Unit filename="include\fraise.h" />
-		<Unit filename="include\fruit.h" />
-		<Unit filename="include\fruitdecorator.h" />
-		<Unit filename="include\fruitdecoratoregal.h" />
-		<Unit filename="include\fruitdecoratorsharp.h" />
-		<Unit filename="include\fruitdecoratorstar.h" />
-		<Unit filename="include\pomme.h" />
+		<Unit filename="include/banane.h" />
+		<Unit filename="include/fraise.h" />
+		<Unit filename="include/fruit.h" />
+		<Unit filename="include/fruitdecorator.h" />
+		<Unit filename="include/fruitdecoratoregal.h" />
+		<Unit filename="include/fruitdecoratorsharp.h" />
+		<Unit filename="include/fruitdecoratorstar.h" />
+		<Unit filename="include/panierdefruit.h" />
+		<Unit filename="include/pomme.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src\banane.cpp" />
-		<Unit filename="src\fraise.cpp" />
-		<Unit filename="src\fruitdecorator.cpp" />
-		<Unit filename="src\fruitdecoratoregal.cpp" />
-		<Unit filename="src\fruitdecoratorsharp.cpp" />
-		<Unit filename="src\fruitdecoratorstar.cpp" />
-		<Unit filename="src\pomme.cpp" />
+		<Unit filename="src/banane.cpp" />
+		<Unit filename="src/fraise.cpp" />
+		<Unit filename="src/fruitdecorator.cpp" />
+		<Unit filename="src/fruitdecoratoregal.cpp" />
+		<Unit filename="src/fruitdecoratorsharp.cpp" />
+		<Unit filename="src/fruitdecoratorstar.cpp" />
+		<Unit filename="src/panierdefruit.cpp" />
+		<Unit filename="src/pomme.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
