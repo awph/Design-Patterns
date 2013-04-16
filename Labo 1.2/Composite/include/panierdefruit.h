@@ -12,7 +12,6 @@ class PanierDeFruit : public Fruit
         void afficherFruit();
         bool avecOuSansPepin();
         void ajouterFruit(Fruit *);
-    protected:
     private:
         std::vector<Fruit *> listeFruits;
 };

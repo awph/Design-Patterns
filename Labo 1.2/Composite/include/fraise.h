@@ -10,8 +10,6 @@ class Fraise : public Fruit
         virtual ~Fraise();
         void afficherFruit();
         bool avecOuSansPepin();
-    protected:
-    private:
 };
 
 #endif // FRAISE_H

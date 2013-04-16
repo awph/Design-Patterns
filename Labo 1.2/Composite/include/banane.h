@@ -11,8 +11,6 @@ class Banane : public Fruit
         virtual ~Banane();
         void afficherFruit();
         bool avecOuSansPepin();
-    protected:
-    private:
 };
 
 #endif // BANANE_H
