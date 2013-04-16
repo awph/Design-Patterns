@@ -8,29 +8,48 @@
 
 using namespace std;
 
+void ajouterFruits(PanierDeFruit *panier)
+{
+    while(true)
+    {
+        cout << "Fruit à ajouter (banane, fraise, pomme, panier, finpanier) : " << endl;
+        string input;
+        cin >> input;
+
+        if(input == "banane")
+            panier->ajouterFruit(new Banane());
+        else if(input == "fraise")
+            panier->ajouterFruit(new Fraise());
+        else if(input == "pomme")
+            panier->ajouterFruit(new Pomme());
+        else if(input == "panier")
+        {
+            PanierDeFruit *panierInterne = new PanierDeFruit();
+            ajouterFruits(panierInterne);
+            panier->ajouterFruit(panierInterne);
+        }
+        else if(input == "finpanier")
+            return;
+        else
+            cout << "Veuillez vérifier votre saisie" << endl;
+    }
+}
+
 int main()
 {
     setlocale(LC_ALL, "frs");
 
-    PanierDeFruit* fruits = new PanierDeFruit();
+    PanierDeFruit* panierRacine = new PanierDeFruit();
 
-    fruits->ajouterFruit(new Banane());
+    ajouterFruits(panierRacine);
 
-    PanierDeFruit* fruits2 = new PanierDeFruit();
-    fruits->ajouterFruit(new Pomme());
-    fruits->ajouterFruit(new Fraise());
-    fruits->ajouterFruit(new Fraise());
-
-    fruits->ajouterFruit(fruits2);
-    fruits2->ajouterFruit(new Fraise());
-    fruits2->ajouterFruit(new Fraise());
-    fruits->ajouterFruit(new Pomme());
-
-    fruits->afficherFruit();
+    cout << endl << endl;
+    cout << "Contenu du panier racine :" << endl;
+    panierRacine->afficherFruit();
     cout << endl;
-    cout << "Pépins : " << boolalpha << fruits->avecOuSansPepin();
+    cout << "Pépins : " << boolalpha << panierRacine->avecOuSansPepin();
 
-    delete fruits;
+    delete panierRacine;
 
     return 0;
 }
