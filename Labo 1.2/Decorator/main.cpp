@@ -90,6 +90,7 @@ int choixFruit()
     int choix;
     do
     {
+        afficherCredits();
         cout << "Menu principal : " << endl
             << "1) Ajouter une banane" << endl
             << "2) Ajouter une fraise" << endl
@@ -111,6 +112,7 @@ void decorerFruit(Fruit *&fruit)
         choix = 0;
         do
         {
+            afficherCredits();
             cout << "Menu décoration : " << endl
                 << "1) Ajouter une décoration \"=\"" << endl
                 << "2) Ajouter une décoration \"#\"" << endl
@@ -147,11 +149,10 @@ int main()
 
     ajouterFruits(panierRacine);
 
-    cout << endl << endl;
-    cout << "Contenu du panier racine :" << endl;
+    afficherCredits();
+    cout << endl << endl <<"Contenu du panier racine :" << endl;
     panierRacine->afficherFruit();
-    cout << endl;
-    cout << "Pépins : " << boolalpha << panierRacine->avecOuSansPepin();
+    cout << endl << "Pépins : " << boolalpha << panierRacine->avecOuSansPepin() << endl << endl;
 
     delete panierRacine;
 
