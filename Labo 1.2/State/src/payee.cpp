@@ -1,6 +1,6 @@
-#include "payee.h"
-#include "envoyee.h"
-#include "commande.h"
+#include "../include/payee.h"
+#include "../include/envoyee.h"
+#include "../include/commande.h"
 
 #include <iostream>
 

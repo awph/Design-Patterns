@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="untitled" />
+		<Option title="State" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -32,16 +32,16 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="commande.cpp" />
-		<Unit filename="commande.h" />
-		<Unit filename="enattente.cpp" />
-		<Unit filename="enattente.h" />
-		<Unit filename="envoyee.cpp" />
-		<Unit filename="envoyee.h" />
+		<Unit filename="include/commande.h" />
+		<Unit filename="include/enattente.h" />
+		<Unit filename="include/envoyee.h" />
+		<Unit filename="include/payee.h" />
+		<Unit filename="include/statut.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="payee.cpp" />
-		<Unit filename="payee.h" />
-		<Unit filename="statut.h" />
+		<Unit filename="src/commande.cpp" />
+		<Unit filename="src/enattente.cpp" />
+		<Unit filename="src/envoyee.cpp" />
+		<Unit filename="src/payee.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
