@@ -25,13 +25,17 @@ int main()
 {
     setlocale(LC_ALL, "frs");
 
-    afficherCredits();
+
     Commande c;
-    for(int i = 0;i < 4; ++i)//4 pour bien voir qu'il n'y a plus de changement d'état après l'état <<Envoyée>>
+    char choix=0;
+    while(choix != 'q')
     {
+        afficherCredits();
+        cout << "État actuel : " << endl;
         c.traiterCommande();
-        cout << "Appuyer sur [Enter] pour passer à l'état suivant" << endl;
-        cin.get();
+        cout << endl << "Actions :" << endl << "s : Passer à l'état suivant" << endl << "q : Quitter" << endl << endl;
+        cout << "Choix : ";
+        cin >> choix;
     }
 
     return 0;
