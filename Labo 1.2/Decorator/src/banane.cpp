@@ -17,6 +17,7 @@ Banane::~Banane()
 void Banane::afficherFruit()
 {
     cout << nomDuFruit;
+    Fruit::afficherFruit();
 }
 
 bool Banane::avecOuSansPepin()

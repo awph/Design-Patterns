@@ -17,6 +17,7 @@ Fraise::~Fraise()
 void Fraise::afficherFruit()
 {
     cout << nomDuFruit;
+    Fruit::afficherFruit();
 }
 
 bool Fraise::avecOuSansPepin()

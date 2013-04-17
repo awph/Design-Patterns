@@ -53,8 +53,10 @@ void ajouterFruits(PanierDeFruit *panier)
         case 4: //panier
         {
             PanierDeFruit *panierInterne = new PanierDeFruit();
-            ajouterFruits(panierInterne);
-            panier->ajouterFruit(panierInterne);
+            Fruit *fruit = panierInterne;
+            decorerFruit(fruit);
+            panier->ajouterFruit(fruit);
+            ajouterFruits(panier);
             break;
         }
         case 5: //Fin panier
@@ -140,7 +142,6 @@ void decorerFruit(Fruit *&fruit)
 int main()
 {
     setlocale(LC_ALL, "frs");
-    afficherCredits();
 
     PanierDeFruit* panierRacine = new PanierDeFruit();
 

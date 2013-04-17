@@ -17,6 +17,7 @@ Pomme::~Pomme()
 void Pomme::afficherFruit()
 {
     cout << nomDuFruit;
+    Fruit::afficherFruit();
 }
 
 bool Pomme::avecOuSansPepin()
