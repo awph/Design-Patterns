@@ -6,6 +6,7 @@
 class Fruit
 {
     public:
+        virtual ~Fruit(){}
         virtual void afficherFruit() = 0;
         virtual bool avecOuSansPepin() = 0;
     protected:

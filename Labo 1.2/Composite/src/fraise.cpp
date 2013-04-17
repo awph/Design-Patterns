@@ -9,11 +9,6 @@ Fraise::Fraise()
     pepin = true;
 }
 
-Fraise::~Fraise()
-{
-    //dtor
-}
-
 void Fraise::afficherFruit()
 {
     cout << nomDuFruit;

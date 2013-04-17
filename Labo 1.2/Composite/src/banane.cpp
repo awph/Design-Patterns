@@ -9,11 +9,6 @@ Banane::Banane()
     pepin = false;
 }
 
-Banane::~Banane()
-{
-    //dtor
-}
-
 void Banane::afficherFruit()
 {
     cout << nomDuFruit;

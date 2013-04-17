@@ -8,7 +8,7 @@ class Pomme : public Fruit
 {
     public:
         Pomme();
-        virtual ~Pomme();
+        ~Pomme(){}
         void afficherFruit();
         bool avecOuSansPepin();
 };

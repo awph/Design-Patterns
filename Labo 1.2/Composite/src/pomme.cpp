@@ -9,11 +9,6 @@ Pomme::Pomme()
     pepin = true;
 }
 
-Pomme::~Pomme()
-{
-    //dtor
-}
-
 void Pomme::afficherFruit()
 {
     cout << nomDuFruit;
