@@ -3,7 +3,7 @@
 
 FruitDecorator::FruitDecorator(Fruit *fruit) : m_fruit(fruit) { }
 
-FruitDecorator::~FruitDecorator() { }
+FruitDecorator::~FruitDecorator() { delete m_fruit; }
 
 void FruitDecorator::afficherFruit()
 {
