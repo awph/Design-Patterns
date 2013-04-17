@@ -1,5 +1,6 @@
 #include <iostream>
 #include <clocale>
+#include <cstdlib>
 
 #include "include/panierdefruit.h"
 #include "include/fruit.h"
@@ -59,7 +60,7 @@ void ajouterFruits(PanierDeFruit *panier)
         case 5: //Fin panier
             return;
         case 6: //Quitter
-            break;
+            exit(EXIT_SUCCESS);
         default:
             cout << "Veuillez vérifier votre saisie" << endl;
         }
@@ -88,10 +89,10 @@ int choixFruit()
     do
     {
         cout << "Menu principal : " << endl
-            << "1) Ajouté une banane" << endl
-            << "2) Ajouté une fraise" << endl
-            << "3) Ajouté une pomme" << endl
-            << "4) Ajouté un panier" << endl
+            << "1) Ajouter une banane" << endl
+            << "2) Ajouter une fraise" << endl
+            << "3) Ajouter une pomme" << endl
+            << "4) Ajouter un panier" << endl
             << "5) Finir panier" << endl
             << "6) Quitter" << endl << endl
             << "Choix : ";
@@ -109,10 +110,10 @@ void decorerFruit(Fruit *&fruit)
         do
         {
             cout << "Menu décoration : " << endl
-                << "1) Ajouté une décoration \"=\"" << endl
-                << "2) Ajouté une décoration \"#\"" << endl
-                << "3) Ajouté une décoration \"*\"" << endl
-                << "4) Quitté l'ajout de décoration" << endl
+                << "1) Ajouter une décoration \"=\"" << endl
+                << "2) Ajouter une décoration \"#\"" << endl
+                << "3) Ajouter une décoration \"*\"" << endl
+                << "4) Quitter l'ajout de décoration" << endl
                 << "Choix : ";
             cin >> choix;
         }while(choix < 1 || choix > 4);
