@@ -5,5 +5,5 @@ using namespace std;
 
 void Fruit::afficherFruit()
 {
-    cout << "- " << ((avecOuSansPepin()) ? "Avec" : "Sans") << " pépin" << endl;
+    cout << "- " << ((avecOuSansPepin()) ? "Avec" : "Sans") << " pépin";
 }

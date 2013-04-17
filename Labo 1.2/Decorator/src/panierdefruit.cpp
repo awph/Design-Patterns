@@ -19,13 +19,13 @@ PanierDeFruit::~PanierDeFruit()
 
 void PanierDeFruit::afficherFruit()
 {
-    cout << "Panier[";
+    cout << "Panier[" << endl;
     vector<Fruit *>::const_iterator it = listeFruits.begin();
     for(; it != listeFruits.end(); ++it)
     {
         (*it)->afficherFruit();
         if(it + 1 != listeFruits.end())
-            cout << ", ";
+            cout << ", " << endl;
     }
     cout << "]";
 }
