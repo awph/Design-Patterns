@@ -43,11 +43,19 @@ int choixFruit()
     return choix;
 }
 
-void ajouterFruits(PanierDeFruit *panier)
+void afficherPanier(PanierDeFruit* panier)
+{
+    cout << endl << endl << "Contenu du panier racine :" << endl;
+    panier->afficherFruit();
+    cout << endl << "Pépins : " << boolalpha << panier->avecOuSansPepin() << endl << endl;
+}
+
+void ajouterFruits(PanierDeFruit *panier,PanierDeFruit* panierRacine)
 {
     while(true)
     {
         afficherCredits();
+        afficherPanier(panierRacine);
         int choix = choixFruit();
 
         switch (choix)
@@ -64,8 +72,8 @@ void ajouterFruits(PanierDeFruit *panier)
             case 4: //panier
             {
                 PanierDeFruit *panierInterne = new PanierDeFruit();
-                ajouterFruits(panierInterne);
                 panier->ajouterFruit(panierInterne);
+                ajouterFruits(panierInterne,panierRacine);
                 break;
             }
             case 5: //Fin panier
@@ -84,13 +92,7 @@ int main()
 
     PanierDeFruit* panierRacine = new PanierDeFruit();
 
-    ajouterFruits(panierRacine);
-
-    cout << endl << endl;
-    cout << "Contenu du panier racine :" << endl;
-    panierRacine->afficherFruit();
-    cout << endl;
-    cout << "Pépins : " << boolalpha << panierRacine->avecOuSansPepin();
+    ajouterFruits(panierRacine,panierRacine);
 
     delete panierRacine;
 
