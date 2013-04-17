@@ -1,5 +1,5 @@
-#include "commande.h"
-#include "enattente.h"
+#include "../include/commande.h"
+#include "../include/enattente.h"
 
 Commande::Commande():statut(new EnAttente())
 {

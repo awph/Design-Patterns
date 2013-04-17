@@ -1,5 +1,5 @@
-#include "envoyee.h"
-#include "commande.h"
+#include "../include/envoyee.h"
+#include "../include/commande.h"
 
 #include <iostream>
 
