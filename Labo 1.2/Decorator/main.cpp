@@ -152,7 +152,7 @@ int main()
     afficherCredits();
     cout << endl << endl <<"Contenu du panier racine :" << endl;
     panierRacine->afficherFruit();
-    cout << endl << "Pépins : " << boolalpha << panierRacine->avecOuSansPepin() << endl << endl;
+    cout << endl << endl;
 
     delete panierRacine;
 
