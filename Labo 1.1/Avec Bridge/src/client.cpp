@@ -30,7 +30,7 @@ Client::Client()
     shapes.push_back(new Hexagon(xh,yh,l,v1));
     shapes.push_back(new Hexagon(xh,yh,l,v2));
 
-    for(int i = 0; i < shapes.size(); ++i)
+    for(unsigned int i = 0; i < shapes.size(); ++i)
     {
         shapes[i]->draw();
 
@@ -38,11 +38,12 @@ Client::Client()
             std::cout << std::endl;
     }
 
-    delete v1, v2;
+    delete v1;
+    delete v2;
 }
 
 Client::~Client()
 {
-    for(int i = 0;i < shapes.size();++i)
+    for(unsigned int i = 0;i < shapes.size();++i)
         delete shapes[i];
 }

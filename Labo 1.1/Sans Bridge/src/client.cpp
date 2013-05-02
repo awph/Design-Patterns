@@ -27,7 +27,7 @@ Client::Client()
     shapes.push_back(new HexagonV1(xh,yh,l));
     shapes.push_back(new HexagonV2(xh,yh,l));
 
-    for(int i = 0;i < shapes.size(); ++i)
+    for(unsigned int i = 0;i < shapes.size(); ++i)
     {
         shapes[i]->draw();
         if((i+1)%2==0)
@@ -37,6 +37,6 @@ Client::Client()
 
 Client::~Client()
 {
-    for(int i = 0;i < shapes.size(); ++i)
+    for(unsigned int i = 0;i < shapes.size(); ++i)
 		delete shapes[i];
 }
