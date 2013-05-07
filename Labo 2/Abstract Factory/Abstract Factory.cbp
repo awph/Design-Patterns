@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Abstract Factory" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Abstract Factory" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Abstract Factory" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="herbe.h" />
+		<Unit filename="herbepourcuisson.cpp" />
+		<Unit filename="herbepourcuisson.h" />
+		<Unit filename="herbepourpotage.cpp" />
+		<Unit filename="herbepourpotage.h" />
+		<Unit filename="herbepoursalade.cpp" />
+		<Unit filename="herbepoursalade.h" />
+		<Unit filename="herbepourvapeur.cpp" />
+		<Unit filename="herbepourvapeur.h" />
+		<Unit filename="huile.h" />
+		<Unit filename="huilepourcuisson.cpp" />
+		<Unit filename="huilepourcuisson.h" />
+		<Unit filename="huilepourpotage.cpp" />
+		<Unit filename="huilepourpotage.h" />
+		<Unit filename="huilepoursalade.cpp" />
+		<Unit filename="huilepoursalade.h" />
+		<Unit filename="huilepourvapeur.cpp" />
+		<Unit filename="huilepourvapeur.h" />
+		<Unit filename="ingredientfactory.h" />
+		<Unit filename="ingredientpourcuissonfactory.cpp" />
+		<Unit filename="ingredientpourcuissonfactory.h" />
+		<Unit filename="ingredientpourpotagefactory.cpp" />
+		<Unit filename="ingredientpourpotagefactory.h" />
+		<Unit filename="ingredientpoursaladefactory.cpp" />
+		<Unit filename="ingredientpoursaladefactory.h" />
+		<Unit filename="ingredientpourvapeurfactory.cpp" />
+		<Unit filename="ingredientpourvapeurfactory.h" />
+		<Unit filename="legume.h" />
+		<Unit filename="legumepourcuisson.cpp" />
+		<Unit filename="legumepourcuisson.h" />
+		<Unit filename="legumepourpotage.cpp" />
+		<Unit filename="legumepourpotage.h" />
+		<Unit filename="legumepoursalade.cpp" />
+		<Unit filename="legumepoursalade.h" />
+		<Unit filename="legumepourvapeur.cpp" />
+		<Unit filename="legumepourvapeur.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="typeingredient.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
