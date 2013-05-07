@@ -37,6 +37,9 @@ int main()
         char choix;
         cin >> choix;
 
+        if(choix == 'q')
+            return 0;
+
         TypeLegume typemenu = (TypeLegume)choix;
         // createLegume retourne 0 si le type est inconnu
         legume = LegumeFactory::createLegume(typemenu);
