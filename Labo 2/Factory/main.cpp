@@ -1,15 +1,15 @@
 #include <iostream>
-#include "legumefactory.h"
-#include "legume.h"
-#include "typelegume.h"
+#include "include/legumefactory.h"
+#include "include/legume.h"
+#include "include/typelegume.h"
 
 using namespace std;
 
 void afficherCredits()
 {
     cout << "|===========================================|" << endl
-         << "|Programme rÃ©alisÃ© par :                    |" << endl
-         << "|                        - SÃ©bastien Vaucher|" << endl
+         << "|Programme réalisé par :                    |" << endl
+         << "|                        - Sébastien Vaucher|" << endl
          << "|                        - Alexandre Perez  |" << endl
          << "|                        - Diego Antognini  |" << endl
          << "|===========================================|" << endl << endl;
@@ -25,7 +25,7 @@ int main()
 
     while(legume == 0)
     {
-        cout << "Quel type de menu souhaitez-vous rÃ©aliser ?" << endl;
+        cout << "Quel type de menu souhaitez-vous réaliser ?" << endl;
         cout << "Choix :" << endl
             << "c : Cuisson" << endl
             << "p : Potage" << endl
@@ -45,7 +45,7 @@ int main()
         legume = LegumeFactory::createLegume(typemenu);
     }
 
-    cout << endl << endl << "Le lÃ©gume choisi pour ce type de menu est :" << endl;
+    cout << endl << endl << "Le légume choisi pour ce type de menu est :" << endl;
     legume->display();
 
     delete legume;

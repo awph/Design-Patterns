@@ -1,19 +1,19 @@
 #include <iostream>
-#include "ingredientfactory.h"
-#include "ingredientpourcuissonfactory.h"
-#include "ingredientpourpotagefactory.h"
-#include "ingredientpourvapeurfactory.h"
-#include "ingredientpoursaladefactory.h"
-#include "legume.h"
-#include "typeingredient.h"
+#include "include/ingredientfactory.h"
+#include "include/ingredientpourcuissonfactory.h"
+#include "include/ingredientpourpotagefactory.h"
+#include "include/ingredientpourvapeurfactory.h"
+#include "include/ingredientpoursaladefactory.h"
+#include "include/legume.h"
+#include "include/typeingredient.h"
 
 using namespace std;
 
 void afficherCredits()
 {
     cout << "|===========================================|" << endl
-         << "|Programme rÃ©alisÃ© par :                    |" << endl
-         << "|                        - SÃ©bastien Vaucher|" << endl
+         << "|Programme réalisé par :                    |" << endl
+         << "|                        - Sébastien Vaucher|" << endl
          << "|                        - Alexandre Perez  |" << endl
          << "|                        - Diego Antognini  |" << endl
          << "|===========================================|" << endl << endl;
@@ -46,7 +46,7 @@ int main()
 
     while(factory == 0)
     {
-        cout << "Quel type de menu souhaitez-vous rÃ©aliser ?" << endl;
+        cout << "Quel type de menu souhaitez-vous réaliser ?" << endl;
         cout << "Choix :" << endl
             << "c : Cuisson" << endl
             << "p : Potage" << endl
@@ -67,9 +67,9 @@ int main()
 
     while(true)
     {
-        cout << endl << "Quel type d'ingrÃ©dient souhaitez-vous utiliser ?" << endl;
+        cout << endl << "Quel type d'ingrédient souhaitez-vous utiliser ?" << endl;
         cout << "Choix :" << endl
-            << "l : LÃ©gume" << endl
+            << "l : Légume" << endl
             << "e : Herbe" << endl
             << "u : Huile" << endl
             << "q : Quitter" << endl;
@@ -81,7 +81,7 @@ int main()
         if(choix == 'q')
             break;
 
-        cout << endl << "L'ingrÃ©dient correspondant est :" << endl;
+        cout << endl << "L'ingrédient correspondant est :" << endl;
 
         switch(choix)
         {

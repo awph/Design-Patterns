@@ -32,19 +32,19 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="legume.h" />
-		<Unit filename="legumefactory.cpp" />
-		<Unit filename="legumefactory.h" />
-		<Unit filename="legumepourcuisson.cpp" />
-		<Unit filename="legumepourcuisson.h" />
-		<Unit filename="legumepourpotage.cpp" />
-		<Unit filename="legumepourpotage.h" />
-		<Unit filename="legumepoursalade.cpp" />
-		<Unit filename="legumepoursalade.h" />
-		<Unit filename="legumepourvapeur.cpp" />
-		<Unit filename="legumepourvapeur.h" />
+		<Unit filename="include/legume.h" />
+		<Unit filename="src/legumefactory.cpp" />
+		<Unit filename="include/legumefactory.h" />
+		<Unit filename="src/legumepourcuisson.cpp" />
+		<Unit filename="include/legumepourcuisson.h" />
+		<Unit filename="src/legumepourpotage.cpp" />
+		<Unit filename="include/legumepourpotage.h" />
+		<Unit filename="src/legumepoursalade.cpp" />
+		<Unit filename="include/legumepoursalade.h" />
+		<Unit filename="src/legumepourvapeur.cpp" />
+		<Unit filename="include/legumepourvapeur.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="typelegume.h" />
+		<Unit filename="include/typelegume.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
