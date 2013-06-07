@@ -14,10 +14,22 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    clock.cpp
+    clock.cpp \
+    handler.cpp \
+    handlerhour.cpp \
+    handlerminutes.cpp \
+    handlersecondes.cpp \
+    timemanager.cpp \
+    handlermilliseconds.cpp
 
 HEADERS  += mainwindow.h \
-    clock.h
+    clock.h \
+    handler.h \
+    handlerhour.h \
+    handlerminutes.h \
+    handlersecondes.h \
+    timemanager.h \
+    handlermilliseconds.h
 
 FORMS    += mainwindow.ui \
     clock.ui
