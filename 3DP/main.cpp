@@ -8,7 +8,7 @@
 #include "handler.h"
 #include <climits>
 #define TEST_CHAIN_OF_RESPONSIBILITY false
-#define TEST_CLOCK true
+#define TEST_CLOCK false
 
 int main(int argc, char *argv[])
 {

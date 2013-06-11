@@ -20,6 +20,9 @@ public:
 public slots:
     void tickSecond();
     void syncTime();
+
+protected:
+    void resizeEvent(QResizeEvent*);
     
 private:
     QGraphicsScene* scene;

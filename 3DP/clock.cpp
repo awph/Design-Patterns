@@ -14,6 +14,7 @@ Clock::Clock(QWidget* parent) : QGraphicsView(parent), hoursNeedle(0), minutesNe
 
     //scene->addEllipse(190, 190, 20, 20, QPen(Qt::blue));
     setRenderHints(QPainter::Antialiasing | QPainter::HighQualityAntialiasing | QPainter::SmoothPixmapTransform);
+    fitInView(scene->itemsBoundingRect() ,Qt::KeepAspectRatio);
 }
 
 Clock::~Clock()
@@ -28,6 +29,11 @@ Clock::~Clock()
         delete dial;
     if(dateDisplay != 0)
         delete dateDisplay;
+}
+
+void Clock::resizeEvent(QResizeEvent *)
+{
+    fitInView(scene->itemsBoundingRect() ,Qt::KeepAspectRatio);
 }
 
 void Clock::tickSecond()
@@ -87,8 +93,6 @@ void Clock::setSecondsNeedle(QPixmap& needle)
     secondsNeedle = scene->addPixmap(needle);
     secondsNeedle->setZValue(Z_SECONDS);
     addNeedle(secondsNeedle);
-
-    syncTime();
 }
 
 void Clock::setMinutesNeedle(QPixmap &needle)
@@ -96,8 +100,6 @@ void Clock::setMinutesNeedle(QPixmap &needle)
     minutesNeedle = scene->addPixmap(needle);
     minutesNeedle->setZValue(Z_MINUTES);
     addNeedle(minutesNeedle);
-
-    syncTime();
 }
 
 void Clock::setHoursNeedle(QPixmap &needle)
@@ -105,16 +107,12 @@ void Clock::setHoursNeedle(QPixmap &needle)
     hoursNeedle = scene->addPixmap(needle);
     hoursNeedle->setZValue(Z_HOURS);
     addNeedle(hoursNeedle);
-
-    syncTime();
 }
 
 void Clock::addNeedle(QGraphicsPixmapItem *needle)
 {
     needle->setOffset(-(qreal)needle->pixmap().width() / 2.0, -(qreal)needle->pixmap().height() / 2.0);
     needle->setPos(scene->width() / 2.0, scene->height() / 2.0);
-
-    syncTime();
 }
 
 void Clock::setDial(QPixmap &bground)
