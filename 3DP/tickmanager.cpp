@@ -11,19 +11,14 @@ TickManager::TickManager(TickManagerType type) : type(type)
     timerTop->setInterval(type.waitZeroPosition * 1000.0);
     connect(timerTop, SIGNAL(timeout()), this, SLOT(start()));
 
-    long tmrDelay;
-    if(type.waitZeroPosition < 0.0001)
-        tmrDelay = 1000.0 / type.ticksPerSecond;
-    else
-    {
-        countRunning = type.ticksPerSecond * 60.0;
-        QTime t = QTime::currentTime();
-        counterRunning = countRunning - t.second() * type.ticksPerSecond;
-        tmrDelay = (60.0 - type.waitZeroPosition) / 60.0 * (1.0 / type.ticksPerSecond) * 1000.0;
-    }
+    countRunning = type.ticksPerSecond * 60.0;
+    resync();
+    long tmrDelay = (60.0 - type.waitZeroPosition) / 60.0 * (1.0 / type.ticksPerSecond) * 1000.0;
 
     timerRunning->setInterval(tmrDelay);
     timerRunning->start();
+
+    connect(this, SIGNAL(sync()), this, SLOT(resync()));
 }
 
 TickManager* TickManager::getTickManager(TickManagerType type)
@@ -44,6 +39,12 @@ TickManager* TickManager::getTickManager(TickManagerType type)
     }
 }
 
+void TickManager::resync()
+{
+    QTime t = QTime::currentTime();
+    counterRunning = countRunning - (t.second() + (t.msec() / 1000.0)) * type.ticksPerSecond;
+}
+
 void TickManager::elapsed()
 {
     if(--counterRunning <= 0)
@@ -58,6 +59,7 @@ void TickManager::elapsed()
 void TickManager::start()
 {
     timerRunning->start();
+    emit sync();
 }
 
 qreal TickManager::getTicksPerSecond()

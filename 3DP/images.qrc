@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/rolex">
+        <file alias="dial">rolex_dial.png</file>
+        <file alias="hours">rolex_hours_needle.png</file>
+        <file alias="minutes">rolex_minutes_needle.png</file>
+        <file>rolex_seconds_needle.png</file>
+        <file alias="seconds">rolex_seconds_needle2.png</file>
+    </qresource>
+    <qresource prefix="/swatch">
+        <file alias="dial">swatch_dial.png</file>
+        <file alias="hours">swatch_hours_needle.png</file>
+        <file alias="minutes">swatch_minutes_needle.png</file>
+        <file alias="seconds">swatch_seconds_needle.png</file>
+    </qresource>
+    <qresource prefix="/cff">
+        <file alias="dial">cff_dial.png</file>
+        <file alias="hours">cff_hours_needle.png</file>
+        <file alias="minutes">cff_minutes_needle.png</file>
+        <file alias="seconds">cff_seconds_needle.png</file>
+    </qresource>
+</RCC>

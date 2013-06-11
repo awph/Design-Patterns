@@ -33,9 +33,11 @@ private:
 private slots:
     void elapsed();
     void start();
+    void resync();
 
 signals:
     void tick();
+    void sync();
 };
 
 #endif // TICKMANAGER_H

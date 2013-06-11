@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     handlerminutes.cpp \
     handlersecondes.cpp \
     timemanager.cpp \
-    handlermilliseconds.cpp
+    handlermilliseconds.cpp \
+    tickmanager.cpp
 
 HEADERS  += mainwindow.h \
     clock.h \
@@ -29,7 +30,10 @@ HEADERS  += mainwindow.h \
     handlerminutes.h \
     handlersecondes.h \
     timemanager.h \
-    handlermilliseconds.h
+    handlermilliseconds.h \
+    tickmanager.h
 
-FORMS    += mainwindow.ui \
-    clock.ui
+FORMS    += mainwindow.ui
+
+RESOURCES += \
+    images.qrc
