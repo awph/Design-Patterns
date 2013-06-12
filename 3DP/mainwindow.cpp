@@ -22,13 +22,15 @@ MainWindow::~MainWindow()
 void MainWindow::on_actionAjouter_triggered()
 {
     QStringList sl;
-    sl << "Rolex" << "CFF" << "T-Touch (Gomme)" << "T-Touch (Acier)" << "Swatch (Verte)" << "Swatch (Rose)" << "Swatch (Bleue)" << "Swatch (Orange foncÃ©)" << "Swatch (Orange clair)";
-    QString choice = QInputDialog::getItem(this, tr("Type de montre"), tr("Quel type de montre souhaitez-vous crÃ©er ?"), sl, 0, false);
+    sl << "Rolex" << "CFF" << "T-Touch (Gomme)" << "T-Touch (Acier)" << "Swatch (Verte)" << "Swatch (Rose)" << "Swatch (Bleue)" << "Swatch (Orange foncé)" << "Swatch (Orange clair)";
+    bool ok;
+    QString choice = QInputDialog::getItem(this, tr("Type de montre"), tr("Quel type de montre souhaitez-vous créer ?"), sl, 0, false, &ok);
+    if(!ok)
+        return;
 
     ClockBuilder* builder;
     switch(sl.indexOf(choice))
     {
-    default:
     case 0:
         builder = new RolexClockBuilder();
         break;

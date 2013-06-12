@@ -14,7 +14,12 @@ class Handler
 public:
     Handler(Handler* nextHandler) :
         nextHandler(nextHandler), needle(0), nbTicksPerTour(1) {}
-    virtual ~Handler() {}
+    virtual ~Handler()
+    {
+        if(nextHandler != 0)
+            delete nextHandler;
+    }
+
     virtual void rotateNeedle(QTime& time, int day) = 0;
     virtual void setNeedle(QGraphicsItem* needle, int nbTicksPerTour, NeedleType type) = 0;
 protected:

@@ -35,6 +35,8 @@ Clock::~Clock()
         delete dial;
     if(dateDisplay != 0)
         delete dateDisplay;
+
+    delete handler;
 }
 
 void Clock::resizeEvent(QResizeEvent *)
