@@ -3,6 +3,7 @@
 
 #include <QtGui>
 #include "tickmanager.h"
+#include "handler.h"
 
 class Clock : public QGraphicsView
 {
@@ -12,13 +13,13 @@ public:
     Clock(QWidget *parent = 0);
     ~Clock();
     void setTickManager(TickManager* tickManager);
-    void setSecondsNeedle(QPixmap& needle);
-    void setMinutesNeedle(QPixmap& needle);
-    void setHoursNeedle(QPixmap& needle);
+    void setSecondsNeedle(QPixmap& needle, int nbTicksPerTour);
+    void setMinutesNeedle(QPixmap& needle, int nbTicksPerTour);
+    void setHoursNeedle(QPixmap& needle, int nbTicksPerTour);
+    void setDateDisplay(QPixmap& dateCircle);
     void setDial(QPixmap& bground);
 
 public slots:
-    void tickSecond();
     void syncTime();
 
 protected:
@@ -30,14 +31,15 @@ private:
     QGraphicsPixmapItem* minutesNeedle;
     QGraphicsPixmapItem* secondsNeedle;
     QGraphicsPixmapItem* dial;
-    QWidget* dateDisplay;
+    QGraphicsPixmapItem* dateDisplay;
+    Handler* handler;
 
     TickManager* tickManager;
 
     int rot;
 
-    const static int Z_DIAL = 0;
-    const static int Z_DATE = 1;
+    const static int Z_DIAL = 1;
+    const static int Z_DATE = 0;
     const static int Z_HOURS = 2;
     const static int Z_MINUTES = 3;
     const static int Z_SECONDS = 4;

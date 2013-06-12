@@ -1,11 +1,12 @@
 #include "clock.h"
 #include "timemanager.h"
+#include "handler.h"
 
-Clock::Clock(QWidget* parent) : QGraphicsView(parent), hoursNeedle(0), minutesNeedle(0), secondsNeedle(0)
+Clock::Clock(QWidget* parent) : QGraphicsView(parent), hoursNeedle(0), minutesNeedle(0), secondsNeedle(0), dial(0), dateDisplay(0)
 {
     resize(1000, 1000);
 
-    scene = new QGraphicsScene;
+    scene = new QGraphicsScene(this);
     this->setScene(scene);
 
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -15,6 +16,11 @@ Clock::Clock(QWidget* parent) : QGraphicsView(parent), hoursNeedle(0), minutesNe
     //scene->addEllipse(190, 190, 20, 20, QPen(Qt::blue));
     setRenderHints(QPainter::Antialiasing | QPainter::HighQualityAntialiasing | QPainter::SmoothPixmapTransform);
     fitInView(scene->itemsBoundingRect() ,Qt::KeepAspectRatio);
+
+    handler = new HandlerDate(0);
+    handler = new HandlerHour(handler);
+    handler = new HandlerMinutes(handler);
+    handler = new HandlerSeconds(handler);
 }
 
 Clock::~Clock()
@@ -36,77 +42,54 @@ void Clock::resizeEvent(QResizeEvent *)
     fitInView(scene->itemsBoundingRect() ,Qt::KeepAspectRatio);
 }
 
-void Clock::tickSecond()
-{
-    qreal ticksPerSecond = tickManager->getTicksPerSecond();
-
-    if(hoursNeedle != 0)
-        hoursNeedle->rotate((360.0 / 60.0 / 60.0 / 24.0) / ticksPerSecond);
-    if(minutesNeedle != 0 && tickManager->getWaitZeroPosition() < 0.0001)
-        minutesNeedle->rotate((360.0 / 60.0 / 60.0) / ticksPerSecond);
-    if(secondsNeedle != 0)
-        secondsNeedle->rotate((360.0 / 60.0) / ticksPerSecond);
-}
-
 void Clock::syncTime()
 {
     QTime time = QTime::currentTime();
+    int day = QDate::currentDate().day();
 
-    qreal seconds = (qreal)time.second() + time.msec() / 1000.0;
-    qreal minutes = (qreal)time.minute() + seconds / 60.0;
-    qreal hours = (qreal)time.hour() + minutes / 60.0;
-    if(hours >= 12.0)
-        hours -= 12.0;
-
-    if(tickManager->getWaitZeroPosition() > 0.0001)
-        minutes = (qreal)time.minute();
-
-    if(hoursNeedle != 0)
-    {
-        hoursNeedle->resetTransform();
-        hoursNeedle->setRotation((360.0 / 12.0) * hours);
-    }
-    if(minutesNeedle != 0)
-    {
-        minutesNeedle->resetTransform();
-        minutesNeedle->setRotation((360.0 / 60.0) * minutes);
-    }
-    if(secondsNeedle != 0)
-    {
-        secondsNeedle->resetTransform();
-        secondsNeedle->setRotation((360.0 / 60.0) * seconds);
-    }
+    handler->rotateNeedle(time, day);
 }
 
 void Clock::setTickManager(TickManager* tickManager)
 {
     this->tickManager = tickManager;
+    ((HandlerSeconds*)handler)->setTopWaitTime(tickManager->getWaitZeroPosition());
 
-    connect(tickManager, SIGNAL(sync()), this, SLOT(syncTime()));
-    connect(tickManager, SIGNAL(tick()), this, SLOT(tickSecond()));
+    connect(tickManager, SIGNAL(tick()), this, SLOT(syncTime()));
 
     syncTime();
 }
 
-void Clock::setSecondsNeedle(QPixmap& needle)
+void Clock::setSecondsNeedle(QPixmap& needle, int nbTicksPerTour)
 {
     secondsNeedle = scene->addPixmap(needle);
     secondsNeedle->setZValue(Z_SECONDS);
     addNeedle(secondsNeedle);
+    handler->setNeedle(secondsNeedle, nbTicksPerTour, Second);
 }
 
-void Clock::setMinutesNeedle(QPixmap &needle)
+void Clock::setMinutesNeedle(QPixmap &needle, int nbTicksPerTour)
 {
     minutesNeedle = scene->addPixmap(needle);
     minutesNeedle->setZValue(Z_MINUTES);
     addNeedle(minutesNeedle);
+    handler->setNeedle(minutesNeedle, nbTicksPerTour, Minute);
 }
 
-void Clock::setHoursNeedle(QPixmap &needle)
+void Clock::setHoursNeedle(QPixmap &needle, int nbTicksPerTour)
 {
     hoursNeedle = scene->addPixmap(needle);
     hoursNeedle->setZValue(Z_HOURS);
     addNeedle(hoursNeedle);
+    handler->setNeedle(hoursNeedle, nbTicksPerTour, Hour);
+}
+
+void Clock::setDateDisplay(QPixmap &dateCircle)
+{
+    dateDisplay = scene->addPixmap(dateCircle);
+    dateDisplay->setZValue(Z_DATE);
+    addNeedle(dateDisplay);
+    handler->setNeedle(dateDisplay, 31, Date);
 }
 
 void Clock::addNeedle(QGraphicsPixmapItem *needle)

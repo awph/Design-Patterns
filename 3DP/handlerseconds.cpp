@@ -1,17 +1,17 @@
-#include "handlerhour.h"
+#include "handlerseconds.h"
+#include <QDebug>
 
-HandlerHour::HandlerHour(Handler* nextHandler)
-    : Handler(nextHandler)
+HandlerSeconds::HandlerSeconds(Handler* nextHandler)
+    : Handler(nextHandler), waitTop(0)
 {
 }
 
-void HandlerHour::rotateNeedle(QTime& time, int day)
-{    
-    qreal hours = time.hour() + (time.minute() / 60.0) + (time.second() / 3600.0);
-    if(hours >= 12.0)
-        hours -= 12.0;
+void HandlerSeconds::rotateNeedle(QTime& time, int day)
+{
+    qreal seconds = time.second() + time.msec() / 1000.0;
+    seconds *= (60.0 + waitTop) / 60.0;
 
-    qreal angle = hours / 12.0 * 360.0;
+    qreal angle = seconds / 60.0 * 360.0;
     if(nbTicksPerTour != -1)
     {
         qreal temp = 360.0 / (qreal)nbTicksPerTour;
@@ -27,9 +27,9 @@ void HandlerHour::rotateNeedle(QTime& time, int day)
         nextHandler->rotateNeedle(time, day);
 }
 
-void HandlerHour::setNeedle(QGraphicsItem* needle, int nbTicksPerTour, NeedleType type)
+void HandlerSeconds::setNeedle(QGraphicsItem* needle, int nbTicksPerTour, NeedleType type)
 {
-    if(type == Hour)
+    if(type == Second)
     {
         this->needle = needle;
         this->nbTicksPerTour = nbTicksPerTour;

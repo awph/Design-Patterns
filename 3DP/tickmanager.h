@@ -37,7 +37,6 @@ private slots:
 
 signals:
     void tick();
-    void sync();
 };
 
 #endif // TICKMANAGER_H

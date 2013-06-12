@@ -15,23 +15,33 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     clock.cpp \
-    handler.cpp \
     handlerhour.cpp \
     handlerminutes.cpp \
-    handlersecondes.cpp \
     timemanager.cpp \
-    handlermilliseconds.cpp \
-    tickmanager.cpp
+    tickmanager.cpp \
+    watchmaker.cpp \
+    rolexclockbuilder.cpp \
+    cffclockbuilder.cpp \
+    swatchclockbuilder.cpp \
+    handlerseconds.cpp \
+    ttouchclockbuilder.cpp \
+    handlerdate.cpp
 
 HEADERS  += mainwindow.h \
     clock.h \
     handler.h \
     handlerhour.h \
     handlerminutes.h \
-    handlersecondes.h \
     timemanager.h \
-    handlermilliseconds.h \
-    tickmanager.h
+    tickmanager.h \
+    watchmaker.h \
+    clockbuilder.h \
+    rolexclockbuilder.h \
+    cffclockbuilder.h \
+    swatchclockbuilder.h \
+    handlerseconds.h \
+    ttouchclockbuilder.h \
+    handlerdate.h
 
 FORMS    += mainwindow.ui
 

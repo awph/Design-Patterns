@@ -17,8 +17,6 @@ TickManager::TickManager(TickManagerType type) : type(type)
 
     timerRunning->setInterval(tmrDelay);
     timerRunning->start();
-
-    connect(this, SIGNAL(sync()), this, SLOT(resync()));
 }
 
 TickManager* TickManager::getTickManager(TickManagerType type)
@@ -47,7 +45,7 @@ void TickManager::resync()
 
 void TickManager::elapsed()
 {
-    if(--counterRunning <= 0)
+    if(--counterRunning < 0)
     {
         timerRunning->stop();
         timerTop->start();
@@ -58,8 +56,9 @@ void TickManager::elapsed()
 
 void TickManager::start()
 {
+    emit tick();
     timerRunning->start();
-    emit sync();
+    resync();
 }
 
 qreal TickManager::getTicksPerSecond()

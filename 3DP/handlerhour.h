@@ -7,7 +7,8 @@ class HandlerHour : public Handler
 {
 public:
     HandlerHour(Handler* nextHandler);
-    QTime getTime(long timeInMilliseconds, QTime &time);
+    void rotateNeedle(QTime& time, int day);
+    void setNeedle(QGraphicsItem* needle, int nbTicksPerTour, NeedleType type);
 };
 
 #endif // HANDLERHOUT_H
