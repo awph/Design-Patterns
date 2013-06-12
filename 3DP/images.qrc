@@ -5,6 +5,7 @@
         <file alias="minutes">rolex_minutes_needle.png</file>
         <file>rolex_seconds_needle.png</file>
         <file alias="seconds">rolex_seconds_needle2.png</file>
+        <file alias="date">rolex_date.png</file>
     </qresource>
     <qresource prefix="/swatch">
         <file alias="dial_1">swatch_dial.png</file>

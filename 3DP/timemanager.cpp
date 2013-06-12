@@ -15,7 +15,7 @@ TimeManager::TimeManager()
     currentTimeInMilliseconds = now->tm_hour * 1000 * 60 * 60 + now->tm_min * 1000 * 60 + now->tm_sec * 1000;
 
 
-    QTimer* timer = new QTimer();
+    QTimer* timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(updateTime()));
     timer->start(dt);
 }

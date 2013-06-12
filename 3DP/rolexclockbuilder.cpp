@@ -22,7 +22,8 @@ void RolexClockBuilder::buildSecondsNeedle()
 
 void RolexClockBuilder::buildDateDisplay()
 {
-
+    QPixmap pixmap(":/rolex/date");
+    clock->setDateDisplay(pixmap);
 }
 
 void RolexClockBuilder::buildDial()

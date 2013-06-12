@@ -7,16 +7,12 @@ HandlerDate::HandlerDate(Handler* nextHandler)
 
 void HandlerDate::rotateNeedle(QTime& time, int day)
 {
-    qreal angle = day / 31.0 * 360.0;
-
-    qreal temp = 360.0 / 31.0;
-    angle = (int)(angle / temp) * temp;
-
+    qreal angle = (qreal)(day-1) / 31.0 * 360.0;
 
     if(needle != 0)
     {
         needle->resetTransform();
-        needle->setRotation(angle);
+        needle->setRotation(-angle);
     }
     if(nextHandler != 0)
         nextHandler->rotateNeedle(time, day);
