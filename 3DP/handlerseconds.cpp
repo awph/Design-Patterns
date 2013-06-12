@@ -18,6 +18,9 @@ void HandlerSeconds::rotateNeedle(QTime& time, int day)
         angle = (int)(angle / temp) * temp;
     }
 
+    if(angle > 360.0)
+        angle = 0;
+
     if(needle != 0)
     {
         needle->resetTransform();
