@@ -45,6 +45,8 @@ void TickManager::resync()
 
 void TickManager::elapsed()
 {
+    if(counterRunning % 10)
+        resync();
     if(--counterRunning < 0)
     {
         timerRunning->stop();
