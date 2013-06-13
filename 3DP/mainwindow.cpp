@@ -28,7 +28,7 @@ void MainWindow::on_actionAjouter_triggered()
     if(!ok)
         return;
 
-    ClockBuilder* builder;
+    ClockBuilder* builder = 0;
     switch(sl.indexOf(choice))
     {
     case 0:

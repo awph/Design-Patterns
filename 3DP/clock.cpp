@@ -1,6 +1,7 @@
 #include "clock.h"
 #include "timemanager.h"
 #include "handler.h"
+#include <QGLWidget>
 
 Clock::Clock(QWidget* parent) : QGraphicsView(parent), hoursNeedle(0), minutesNeedle(0), secondsNeedle(0), dial(0), dateDisplay(0)
 {
@@ -16,6 +17,7 @@ Clock::Clock(QWidget* parent) : QGraphicsView(parent), hoursNeedle(0), minutesNe
     //scene->addEllipse(190, 190, 20, 20, QPen(Qt::blue));
     setRenderHints(QPainter::Antialiasing | QPainter::HighQualityAntialiasing | QPainter::SmoothPixmapTransform);
     fitInView(scene->itemsBoundingRect() ,Qt::KeepAspectRatio);
+    setViewport(new QGLWidget(QGLFormat(QGL::DoubleBuffer), this));
 
     handler = new HandlerDate(0);
     handler = new HandlerHour(handler);
