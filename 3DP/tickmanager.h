@@ -19,7 +19,7 @@ class TickManager : public QObject
 public:
     static TickManager* getTickManager(TickManagerType type);
     qreal getTicksPerSecond();
-    long getWaitZeroPosition();
+    qreal getWaitZeroPosition();
 
 private:
     TickManager(TickManagerType type);

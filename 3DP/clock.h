@@ -36,8 +36,6 @@ private:
 
     TickManager* tickManager;
 
-    int rot;
-
     const static int Z_DIAL = 1;
     const static int Z_DATE = 0;
     const static int Z_HOURS = 2;

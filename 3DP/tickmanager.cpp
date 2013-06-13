@@ -68,7 +68,7 @@ qreal TickManager::getTicksPerSecond()
     return type.ticksPerSecond;
 }
 
-long TickManager::getWaitZeroPosition()
+qreal TickManager::getWaitZeroPosition()
 {
     return type.waitZeroPosition;
 }
