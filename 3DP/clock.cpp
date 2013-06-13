@@ -46,7 +46,8 @@ void Clock::resizeEvent(QResizeEvent *)
 
 void Clock::syncTime()
 {
-    QTime time = QTime::currentTime();
+    //QTime time = QTime::currentTime();
+    QTime time = TimeManager::getInstance()->getCurrentTime();
     int day = QDate::currentDate().day();
 
     handler->rotateNeedle(time, day);

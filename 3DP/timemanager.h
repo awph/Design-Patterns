@@ -1,20 +1,26 @@
 #ifndef TIMEMANAGER_H
 #define TIMEMANAGER_H
 
-#include <QObject>
+#include <QThread>
+#include <QTime>
 
-class TimeManager : public QObject
+class TimeManager : public QThread
 {
     Q_OBJECT
 
 public:
     static TimeManager* getInstance();
-    long getCurrentTimeInMilliseconds() const { return currentTimeInMilliseconds; }
+    QTime getCurrentTime() const { return time; }
 private:
     TimeManager();
+    void run();
+    void syncTime();
 
     static TimeManager* timeManager;
-    long currentTimeInMilliseconds;
+    int nbUpdate;
+    QTime time;
+
+
 
 private slots:
     void updateTime();
